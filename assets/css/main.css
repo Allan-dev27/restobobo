@@ -8,9 +8,9 @@
 
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
 :root { 
-  --background-color: #0c0b09; /* Background color for the entire website, including individual sections */
-  --default-color: rgba(255, 255, 255, 0.7); /* Default color used for the majority of the text content across the entire website */
-  --heading-color: #ffffff; /* Color for headings, subheadings and title throughout the website */
+  --background-color: #ffffff; /* Background color for the entire website, including individual sections */
+  --default-color: #0c0b09; /* Default color used for the majority of the text content across the entire website */
+  --heading-color: #0a0a0a; /* Color for headings, subheadings and title throughout the website */
   --accent-color: #cda45e; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
   --surface-color: #29261f; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
   --contrast-color: #0c0b09; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
@@ -18,7 +18,7 @@
 
 /* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
 :root {
-  --nav-color: #ffffff;  /* The default color of the main navmenu links */
+  --nav-color: #f5f3f1;  /* The default color of the main navmenu links */
   --nav-hover-color: #cda45e; /* Applied to main navmenu links when they are hovered over or active */
   --nav-mobile-background-color: #29261f; /* Used as the background color for mobile navigation menu */
   --nav-dropdown-background-color: #29261f; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
@@ -947,7 +947,7 @@ section,
 
 .hero:before {
   content: "";
-  background: color-mix(in srgb, var(--background-color), transparent 50%);
+ background: rgba(12, 11, 9, 0.5); /* ← CHANGEZ ICI */
   position: absolute;
   inset: 0;
   z-index: 2;
@@ -1074,7 +1074,96 @@ section,
 .about .about-img:hover {
   transform: scale(1.03);
 }
+/*--------------------------------------------------------------
+# Clients Section - Carrousel tournant
+--------------------------------------------------------------*/
+.clients {
+  padding: 40px 0;
+  overflow: hidden;
+}
 
+.clients .swiper {
+  padding: 20px 0;
+}
+
+.clients .swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+}
+
+.clients .client-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  padding: 20px;
+  transition: 0.3s;
+}
+
+.clients .client-logo img {
+  max-width: 100%;
+  max-height: 120px;
+  width: auto;
+  height: auto;
+  transition: 0.3s;
+  opacity: 0.6;
+  filter: grayscale(100%);
+}
+
+.clients .client-logo:hover img {
+  filter: grayscale(0);
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+/* Navigation buttons styling */
+.clients .swiper-button-next,
+.clients .swiper-button-prev {
+  color: var(--accent-color);
+  width: 40px;
+  height: 40px;
+  background: rgba(205, 164, 94, 0.1);
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+.clients .swiper-button-next:hover,
+.clients .swiper-button-prev:hover {
+  background: rgba(205, 164, 94, 0.2);
+}
+
+.clients .swiper-button-next::after,
+.clients .swiper-button-prev::after {
+  font-size: 20px;
+}
+
+/* Pagination dots styling */
+.clients .swiper-pagination-bullet {
+  background: var(--accent-color);
+  opacity: 0.4;
+  width: 10px;
+  height: 10px;
+}
+
+.clients .swiper-pagination-bullet-active {
+  opacity: 1;
+  background: var(--accent-color);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .clients .client-logo img {
+    max-height: 80px;
+  }
+}
+
+@media (max-width: 480px) {
+  .clients .client-logo img {
+    max-height: 60px;
+  }
+}
 /*--------------------------------------------------------------
 # Why Us Section
 --------------------------------------------------------------*/
