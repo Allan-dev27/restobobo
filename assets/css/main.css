@@ -947,7 +947,7 @@ section,
 
 .hero:before {
   content: "";
- background: rgba(12, 11, 9, 0.5); /* ← CHANGEZ ICI */
+ background: rgba(22, 22, 20, 0.5); /* ← CHANGEZ ICI */
   position: absolute;
   inset: 0;
   z-index: 2;
